@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+
+{% block title %} ss{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'bingo:main' %}" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-secondary">Выбрать</button>
+</form>
+<div class="center">
+    <ul>
+        <li>Выберите размер сетки для бинго и нажмите выбрать. Для начала подойдет 3x3.</li>
+        <li>Создайте бинго, введите туда темы для разговоров и нажмите Создать.</li>
+        <li>Каждый раз когда вы говорите на заднную тему, нажимайте на соответствующее поле.</li>
+        <li><strong>p.s. прогресс каждого бинго сохраняется, вы можете поменять размер сетки в любое время, нажав на иконку и выбрав нужный размер.</strong></li>
+    </ul>
+  </div>
+
+{% endblock %}

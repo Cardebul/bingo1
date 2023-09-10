@@ -1,0 +1,188 @@
+#body {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+}
+
+#matrix {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 84px;
+    text-align: center;
+    justify-content: center; /* Добавлено */
+    align-items: center; /* Добавлено */
+  }
+  
+  #row {
+    display: flex;
+    justify-content: center; /* Добавлено */
+    width: 100%;
+    
+  }
+  #square {
+    border: 1px solid black;
+    width: 20%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    overflow: auto;
+    font-size: 62%;
+    position: relative;
+  }  
+  #fieldforinfo {
+    width: 20%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    resize: none;
+  
+  }
+  @media (min-width: 768px) {
+    #fieldforinfo {
+      font-size: 100%;
+      width: 7.5%;
+    }
+    #square {
+      font-size: 105%;
+      width: 7.5%; /* Измените на нужную ширину ячейки для больших экранов */
+    }
+  }
+
+.bi {
+  color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.square {
+  border: 10px solid black;
+  width: 20%;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  overflow: auto;
+  font-size: 62%;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.google-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color:#3367D6;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #b5c1da;
+}
+
+.google-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url('/static/img/google2.png');
+  background-repeat: no-repeat;
+}
+
+.vk-button {
+  display: inline-block;
+  background-color: #3175f3;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color:#ffffff;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #b5c1da;
+}
+
+
+
+/*   анимация */
+#matrix {
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.animation {
+  display: inline-block;
+}
+
+.cssanimation {
+  font-size: 2.5em;
+  letter-spacing: -4px;
+  font-weight: 400;
+  color: #ff0000;
+  text-align: center;
+}
+
+.cssanimation, .cssanimation span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.rotateXIn { animation-name: rotateXIn }
+@keyframes rotateXIn {
+  from {
+      transform: perspective(600px) translate3d(0, -60px, -2000px) rotateX(75deg);
+      opacity: 0;
+  }
+  5% { transform: perspective(600px) translate3d(0, -60px, -1500px) rotateX(75deg) }
+}
+
+/*   анимация */
+
+#row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#square {
+  text-align: center;
+  color: #ff0000;
+  font-weight: 400;
+  border: 1px solid red;
+  
+}
+
+.background-container {
+  background-image: url("/static/img/bingo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-color: #1a486d;
+  width: 100%;
+  height: 91.2vh;
+}
+
+#menu {
+  position: absolute;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff0000;
+  font-weight: 400;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 150px; /* добавить отступ сверху */
+  }

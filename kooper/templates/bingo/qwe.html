@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<div id="matrix">
+  <h2><div id="result">{{ bingo.progress }} из 12</div></h2>
+  {% for field in fields %}
+    <div id="row">
+      <div id="square" class="field{{ forloop.counter }}" onclick="sendData({{ forloop.counter }})">
+        {% if bingo|getattr:field %}
+          <i id="check{{ forloop.counter }}" class="bi bi-check-square-fill"></i>
+        {% endif %}
+        {{ list|getattr:field }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+  {% csrf_token %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+function sendData(number) {
+  // Получаем значение CSRF-токена из cookie
+  const csrfToken = getCookie('csrftoken');
+
+  // Создаем объект с данными для отправки в JSON формате
+  const data = {
+    number: number
+  };
+
+  // Отправляем POST-запрос с использованием библиотеки axios
+  axios.post('{% url "bingo:index" %}', data, {
+    headers: {
+      'X-CSRFToken': csrfToken
+    }
+  })
+    .then(response => {
+      console.log('Запрос успешно отправлен');
+      CheckProgress()
+    })
+    .catch(error => {
+      console.error('Произошла ошибка при отправке запроса:', error.message);
+    });
+    toggleTag(number)
+
+}
+
+// Функция для получения значения cookie по имени
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+// посылает get запрос для проверки прогресса
+
+function CheckProgress() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Получаем значение из ответа
+
+      var response = JSON.parse(xhr.responseText);
+      var data = response.data;
+
+      // Вставляем значение на страницу
+      document.getElementById("result").innerHTML = data + "    из 12";
+    } else {
+      console.log('Ошибка запроса. Статус: ' + xhr.status);
+    }
+  };
+
+  xhr.open('GET', '{% url "bingo:calc" %}', true);
+
+  xhr.send();
+}
+
+function toggleTag(num) {
+  var tagContainer = document.querySelector('.field' + num);
+  
+  // Проверяем, есть ли уже тег в контейнере
+  if (tagContainer.contains(document.getElementById("check" + num))) {
+    // Если тег уже есть, удаляем его
+    var tag = document.getElementById("check" + num);
+    tagContainer.removeChild(tag);
+  } else {
+    // Если тега нет, создаем и добавляем его
+    var tag = document.createElement("i");
+    tag.id = "check" + num;
+    tag.className = "bi bi-check-square-fill";
+    tagContainer.appendChild(tag);
+  }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+  {% block content %}
+  {% if mod == 3 %}
+  <form method="post" action="{% url 'bingo:create2' %}">
+
+      <div id="matrix">
+          {% csrf_token %}
+
+      {% for field in form.visible_fields %}
+      {% if forloop.counter0|divisibleby:3 %}
+        <div id="row">
+      {% endif %}
+      
+        {{ field }}
+
+
+      {% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
+        </div>
+      {% endif %}
+      {% endfor %}
+    <button type="submit" class="btn btn-secondary">Создать</button>
+
+  </div>
+
+  </form>
+
+      {% else %}
+      <form method="post" action="{% url 'bingo:create' %}">
+
+        <div id="matrix">
+            {% csrf_token %}
+      
+      {% for field in form.visible_fields %}
+      {% if forloop.counter0|divisibleby:5 %}
+        <div id="row">
+      {% endif %}
+      {{ field }}
+    
+      {% if forloop.counter0|add:1|divisibleby:5 or forloop.last %}
+        </div>
+      {% endif %}
+      {% endfor %}
+    <button type="submit" class="btn btn-secondary">Создать</button>
+
+    </div>    
+  </form>
+      {% endif %}
+
+{% endblock %}

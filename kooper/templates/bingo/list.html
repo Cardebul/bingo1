@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<div id="matrix">
+  <div class="animation">
+    <h3 class="cssanimation sequence rotateXIn"></h3>
+  
+  </div>
+  <div id="row">
+    <div id="square" class="field1" onclick="sendData(1)">
+      {% if bingo.field1 %}
+        <i id="check1" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field1 }}
+    </div>
+    <div id="square" class="field2" onclick="sendData(2)">
+      {% if bingo.field2 %}
+        <i id="check2" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field2 }}
+    </div>
+    <div id="square" class="field3" onclick="sendData(3)">
+      {% if bingo.field3 %}
+        <i id="check3" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field3 }}
+    </div>
+    <div id="square" class="field4" onclick="sendData(4)">
+      {% if bingo.field4 %}
+        <i id="check4" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field4 }}
+    </div>
+    <div id="square" class="field5" onclick="sendData(5)">
+      {% if bingo.field5 %}
+        <i id="check5" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field5 }}
+    </div>
+  </div>
+  <div id="row">
+    <div id="square" class="field6" onclick="sendData(6)">
+      {% if bingo.field6 %}
+        <i id="check6" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field6 }}
+    </div>
+    <div id="square" class="field7" onclick="sendData(7)">
+      {% if bingo.field7 %}
+        <i id="check7" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field7 }}
+    </div>
+    <div id="square" class="field8" onclick="sendData(8)">
+      {% if bingo.field8 %}
+        <i id="check8" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field8 }}
+    </div>
+    <div id="square" class="field9" onclick="sendData(9)">
+      {% if bingo.field9 %}
+        <i id="check9" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field9 }}
+    </div>
+    <div id="square" class="field10" onclick="sendData(10)">
+      {% if bingo.field10 %}
+        <i id="check10" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field10 }}
+    </div>
+  </div>
+  <div id="row">
+    <div id="square" class="field11" onclick="sendData(11)">
+      {% if bingo.field11 %}
+        <i id="check11" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field11 }}
+    </div>
+    <div id="square" class="field12" onclick="sendData(12)">
+      {% if bingo.field12 %}
+        <i id="check12" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field12 }}
+    </div>
+    <div id="square" class="field13" onclick="sendData(13)">
+      {% if bingo.field13 %}
+        <i id="check13" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field13 }}
+    </div>
+    <div id="square" class="field14" onclick="sendData(14)">
+      {% if bingo.field14 %}
+        <i id="check14" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field14 }}
+    </div>
+    <div id="square" class="field15" onclick="sendData(15)">
+      {% if bingo.field15 %}
+        <i id="check15" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field15 }}
+    </div>
+  </div>
+  <div id="row">
+    <div id="square" class="field16" onclick="sendData(16)">
+      {% if bingo.field16 %}
+        <i id="check16" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field16 }}
+    </div>
+    <div id="square" class="field17" onclick="sendData(17)">
+      {% if bingo.field17 %}
+        <i id="check17" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field17 }}
+    </div>
+    <div id="square" class="field18" onclick="sendData(18)">
+      {% if bingo.field18 %}
+        <i id="check18" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field18 }}
+    </div>
+    <div id="square" class="field19" onclick="sendData(19)">
+      {% if bingo.field19 %}
+        <i id="check19" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field19 }}
+    </div>
+    <div id="square" class="field20" onclick="sendData(20)">
+      {% if bingo.field20 %}
+        <i id="check20" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field20 }}
+    </div>
+  </div>
+  <div id="row">
+    <div id="square" class="field21" onclick="sendData(21)">
+      {% if bingo.field21 %}
+        <i id="check21" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field21 }}
+    </div>
+    <div id="square" class="field22" onclick="sendData(22)">
+      {% if bingo.field22 %}
+        <i id="check22" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field22 }}
+    </div>
+    <div id="square" class="field23" onclick="sendData(23)">
+      {% if bingo.field23 %}
+        <i id="check23" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field23 }}
+    </div>
+    <div id="square" class="field24" onclick="sendData(24)">
+      {% if bingo.field24 %}
+        <i id="check24" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field24 }}
+    </div>
+    <div id="square" class="field25" onclick="sendData(25)">
+      {% if bingo.field25 %}
+        <i id="check25" class="bi bi-check-square-fill"></i>
+      {% endif %}
+      {{ list.field25 }}
+    </div>
+  </div>
+  {% csrf_token %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+function sendData(number) {
+  // Получаем значение CSRF-токена из cookie
+  const csrfToken = getCookie('csrftoken');
+
+  // Создаем объект с данными для отправки в JSON формате
+  const data = {
+    number: number
+  };
+
+  // Отправляем POST-запрос с использованием библиотеки axios
+  axios.post('{% url "bingo:index" %}', data, {
+    headers: {
+      'X-CSRFToken': csrfToken
+    }
+  })
+    .then(response => {
+      console.log('Запрос успешно отправлен');
+      CheckProgress()
+    })
+    .catch(error => {
+      console.error('Произошла ошибка при отправке запроса:', error.message);
+    });
+    toggleTag(number)
+
+}
+
+// Функция для получения значения cookie по имени
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+// посылает get запрос для проверки прогресса
+
+function CheckProgress() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Получаем значение из ответа
+      var response = JSON.parse(xhr.responseText);
+      var data = response.data;
+      console.log(response.flag)
+      // Проверяем значение флага
+      if (response.flag === true) {
+        // Создаем новый элемент
+        var newAnimationDiv = document.createElement("div");
+        newAnimationDiv.classList.add("animation");
+
+        var h3Element = document.createElement("h3");
+        h3Element.classList.add("cssanimation", "sequence", "rotateXIn");
+        h3Element.innerText = "BINGO  ";
+
+        newAnimationDiv.appendChild(h3Element);
+
+        // Вставляем новый элемент после элемента с классом "animation"
+        var currentAnimationDiv = document.querySelector(".animation");
+        currentAnimationDiv.insertAdjacentElement("afterend", newAnimationDiv);
+
+        // Удаляем новый элемент через 2 секунды
+        setTimeout(function() {
+          newAnimationDiv.remove();
+        }, 2000);
+      }
+
+      // Вставляем значение на страницу
+      // document.getElementById("result").innerHTML = data + " из 8";
+    } else {
+      console.log('Ошибка запроса. Статус: ' + xhr.status);
+    }
+  };
+
+  xhr.open('GET', '{% url "bingo:calc" %}', true);
+
+  xhr.send();
+}
+
+function toggleTag(num) {
+  var tagContainer = document.querySelector('.field' + num);
+  
+  // Проверяем, есть ли уже тег в контейнере
+  if (tagContainer.contains(document.getElementById("check" + num))) {
+    // Если тег уже есть, удаляем его
+    var tag = document.getElementById("check" + num);
+    tagContainer.removeChild(tag);
+  } else {
+    // Если тега нет, создаем и добавляем его
+    var tag = document.createElement("i");
+    tag.id = "check" + num;
+    tag.className = "bi bi-check-square-fill";
+    tagContainer.appendChild(tag);
+  }
+}
+</script>
+{% endblock %}
